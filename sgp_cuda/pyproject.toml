@@ -1,0 +1,22 @@
+[build-system]
+requires = [
+	"scikit-build-core>=0.10",
+	"pybind11>=2.12",
+	"numpy>=2.0"
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "cusgp"
+version = "0.1.0"
+description = "CPU/GPU SGP4/SDP4 propagation backend"
+requires-python = ">=3.10"
+dependencies = [
+	"numpy>=2.0"
+]
+
+[tool.scikit-build]
+cmake.version = ">=3.18"
+
+[tool.scikit-build.cmake.define]
+CMAKE_CUDA_ARCHITECTURES = "86"
